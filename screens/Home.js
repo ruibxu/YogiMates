@@ -8,7 +8,7 @@ const Home = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <AntDesign name="caretleft" size={30} color="black" />
-        <Text style={{ color: theme.colors.text }}>Home</Text>
+        {/* <Text style={{ color: theme.colors.text }}>Home</Text> */}
         <FontAwesome name="circle" size={30} color="black" />
       </View>
 
