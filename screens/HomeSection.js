@@ -10,7 +10,7 @@ import Profile from './Profile';
 
 const Tab = createBottomTabNavigator();
 
-const HomeSection = () => {
+const HomeSection = ({navigation}) => {
     return (
         <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -25,7 +25,7 @@ const HomeSection = () => {
           tabBarActiveTintColor: theme.colors.activeText,
           headerTitleAlign: 'center',
           tabBarLabelStyle: {
-            fontSize: 20, // Change this to your desired font size
+            fontSize: 15, 
           },
           
         })}
