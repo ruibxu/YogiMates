@@ -87,7 +87,7 @@ const Register = ({ navigation }) =>{
             </ScrollView>
 
 
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('HomeSection')}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => navigation.navigate('SignUpSuccess')}>
               <Text style={styles.buttonText}>Sign up</Text>
             </TouchableOpacity>
           </View>

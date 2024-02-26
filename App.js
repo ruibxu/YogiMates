@@ -8,7 +8,7 @@ import 'react-native-gesture-handler';
 import HomeSection from './screens/HomeSection';
 import Register from './screens/Register';
 import Login from './screens/Login';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import SignUpSuccess from './screens/SignUpSuccess';
 
 
 //create a stack navigator
@@ -18,7 +18,6 @@ export default function App() {
 
   return (
     // react navigation container
-    <SafeAreaProvider>
       <NavigationContainer theme={theme}>
         <StatusBar style="auto" />
         <Stack.Navigator
@@ -44,6 +43,13 @@ export default function App() {
             }}
           />
           <Stack.Screen 
+            name="SignUpSuccess" 
+            component={SignUpSuccess}  
+            options={{ 
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
             name="HomeSection" 
             component={HomeSection}  
             options={{ 
@@ -53,7 +59,6 @@ export default function App() {
 
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaProvider>
   );
 }
 
