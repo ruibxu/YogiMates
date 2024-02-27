@@ -4,9 +4,9 @@ import { theme } from "../theme";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Image } from "react-native";
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5 } from "@expo/vector-icons";
 import CircularProgressBar from "../components/progressBar";
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Home = () => {
   const progress = 70;
@@ -18,6 +18,7 @@ const Home = () => {
         <FontAwesome name="circle" size={30} color="black" />
       </View>
 
+<Text style={styles.title}>Weekly goals</Text>
       <View style={styles.card}>
         <View style={styles.content}>
           <Image
@@ -32,34 +33,31 @@ const Home = () => {
             bgColor="#e0e0e0" // Light gray color for background
           />
           <View style={styles.time}>
-          <View style={styles.subtime}>
-          <AntDesign name="clockcircle" size={24} color="black" />
-          <Text>14 mins</Text>
-          </View>
-          <View style={styles.subtime}>
-          <FontAwesome5 name="fire-alt" size={24} color="black" />
-          <Text>312 kal</Text>
-          </View>
-          <View style={styles.subtime}>
-          <MaterialIcons name="bar-chart" size={24} color="black" />
-          <Text>Beginner</Text>
-          </View>
-
-           
+            <View style={styles.subtime}>
+              <AntDesign name="clockcircle" size={24} color="black" />
+              <Text>14 mins</Text>
+            </View>
+            <View style={styles.subtime}>
+              <FontAwesome5 name="fire-alt" size={24} color="black" />
+              <Text>312 kal</Text>
+            </View>
+            <View style={styles.subtime}>
+              <MaterialIcons name="bar-chart" size={24} color="black" />
+              <Text>Beginner</Text>
+            </View>
           </View>
         </View>
       </View>
-
+      <Text style={styles.title}>Analysis summary</Text>
       <View style={styles.card}>
         <View style={styles.content}>
-          <Text style={styles.title}>Recommendations</Text>
           <Text style={styles.description}>description</Text>
         </View>
       </View>
 
+      <Text style={styles.title}>Recommendations</Text>
       <View style={styles.card}>
         <View style={styles.content}>
-          <Text style={styles.title}>Analysis summary</Text>
           <Text style={styles.description}>description</Text>
         </View>
       </View>
@@ -100,24 +98,23 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems:"center"
+    alignItems: "center",
   },
   title: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 5,
+    marginTop: 15,
   },
   description: {
     fontSize: 16,
   },
-  time:{
-    flexDirection:"column",
-    gap:15,
-    
+  time: {
+    flexDirection: "column",
+    gap: 15,
   },
-  subtime:{
-    flexDirection:"row",
-    gap:10,
-    alignItems:"center"
+  subtime: {
+    flexDirection: "row",
+    gap: 10,
+    alignItems: "center",
   },
 });
