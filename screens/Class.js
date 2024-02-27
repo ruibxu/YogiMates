@@ -1,21 +1,22 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { theme } from "../theme";
 import SliderCategory from "../component/Class/SliderCategory";
 import SliderRecommended from "../component/Class/SliderRecommended";
+import SliderList from "../component/Class/SliderList";
 
-const Class = () => {
+const Class = ({ navigation }) => {
   return (
-    <View>
-      <Text style={styles.text}>Category</Text>
-      <SliderCategory/>
-      <Text style={styles.text}>Recommended Classes</Text>
-      <SliderRecommended/>
-    </View>
+    <ScrollView>
+      <View>
+        <Text style={styles.text}>Category</Text>
+        <SliderCategory navigation={navigation}/>
+        <Text style={styles.text}>Recommended Classes</Text>
+        <SliderRecommended />
+        <Text style={styles.text}>My List</Text>
+        <SliderList />
+      </View>
+    </ScrollView>
   );
 };
 
