@@ -3,7 +3,11 @@ import { View, Text, StyleSheet } from "react-native";
 import { theme } from "../theme";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
+import { Image } from "react-native";
+import CircularProgressBar from "../components/progressBar";
+
 const Home = () => {
+  const progress = 70;
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -14,8 +18,20 @@ const Home = () => {
 
       <View style={styles.card}>
         <View style={styles.content}>
+          <Image
+            source={require("/home/kwamboka/prifina/Yoga-app/assets/meditation-303260_640.webp")} // or provide a URL
+            style={{ width: 100, height: 150 }} // Set width and height as per your requirement
+          />
+          <CircularProgressBar
+            radius={45}
+            strokeWidth={10}
+            progress={progress}
+            color="#00ff00" // Green color for progress
+            bgColor="#e0e0e0" // Light gray color for background
+          />
+{/* 
           <Text style={styles.title}>Daily Goals</Text>
-          <Text style={styles.description}>description</Text>
+          <Text style={styles.description}>description</Text> */}
         </View>
       </View>
 
@@ -57,7 +73,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     // margin: 10,
     padding: 10,
-    height: 200
+    height: 200,
   },
   image: {
     width: "100%",
@@ -67,6 +83,9 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems:"center"
   },
   title: {
     fontSize: 18,
