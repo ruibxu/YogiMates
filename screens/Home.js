@@ -4,7 +4,9 @@ import { theme } from "../theme";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Image } from "react-native";
+import { FontAwesome5 } from '@expo/vector-icons';
 import CircularProgressBar from "../components/progressBar";
+import { MaterialIcons } from '@expo/vector-icons';
 
 const Home = () => {
   const progress = 70;
@@ -29,9 +31,22 @@ const Home = () => {
             color="#00ff00" // Green color for progress
             bgColor="#e0e0e0" // Light gray color for background
           />
-{/* 
-          <Text style={styles.title}>Daily Goals</Text>
-          <Text style={styles.description}>description</Text> */}
+          <View style={styles.time}>
+          <View style={styles.subtime}>
+          <AntDesign name="clockcircle" size={24} color="black" />
+          <Text>14 mins</Text>
+          </View>
+          <View style={styles.subtime}>
+          <FontAwesome5 name="fire-alt" size={24} color="black" />
+          <Text>312 kal</Text>
+          </View>
+          <View style={styles.subtime}>
+          <MaterialIcons name="bar-chart" size={24} color="black" />
+          <Text>Beginner</Text>
+          </View>
+
+           
+          </View>
         </View>
       </View>
 
@@ -94,5 +109,15 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
+  },
+  time:{
+    flexDirection:"column",
+    gap:15,
+    
+  },
+  subtime:{
+    flexDirection:"row",
+    gap:10,
+    alignItems:"center"
   },
 });
