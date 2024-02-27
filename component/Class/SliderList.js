@@ -18,8 +18,8 @@ const SliderList = () => {
         horizontal
         renderItem={({ item, index }) => {
           return (
-            <View style={{ width: CONTAINER_SPACE }}>
-              <CardClass item={item} />
+            <View style={{ width: CONTAINER_SPACE }} key={index}>
+              <CardClass item={item} type={false}/>
             </View>
           );
         }}

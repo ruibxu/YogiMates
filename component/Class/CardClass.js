@@ -3,15 +3,15 @@ import React from "react";
 import { theme } from "../../theme";
 import StarRating from "../Rating";
 
-const CardClass = ({ item }) => {
+const CardClass = ({ item, type }) => {
   return (
     <View
       style={{
         borderRadius: 10,
         backgroundColor: "#D9D9D91A",
         alignItems: "center",
-        width: 120,
-        height: 200,
+        width: type ? 160 : 120,
+        height: type ? 158 : 200,
         shadowColor: "#000000",
         shadowOffset: {
           width: 1,
@@ -21,30 +21,63 @@ const CardClass = ({ item }) => {
         shadowRadius: 4,
         elevation: 2,
         overflow: "hidden",
+        marginBottom: type ? 20 : ""
       }}
     >
-      <Image source={item.img} style={styles.posterImage} />
+      <Image source={item.img} style={[styles.posterImage, {width: type ? 160 : 120, height: type ? 86 : 80}]} />
       <View style={styles.container}>
-        <Text
-          style={[
-            styles.text,
-            {
-              fontSize: 10,
-            },
-          ]}
+        <View
+          style={{
+            display: type ? "flex" : "",
+            flexDirection: type ? "row" : "",
+            justifyContent: type ? "space-between" : "",
+          }}
         >
-          {item.title}
-        </Text>
-        <Text
-          style={[
-            styles.text,
-            {
-              fontSize: 7,
-            },
-          ]}
-        >
-          Instructor Name
-        </Text>
+          <View>
+            <Text
+              style={[
+                styles.text,
+                {
+                  fontSize: 10,
+                },
+              ]}
+            >
+              {item.title}
+            </Text>
+            <Text
+              style={[
+                styles.text,
+                {
+                  fontSize: 7,
+                },
+              ]}
+            >
+              Instructor Name
+            </Text>
+          </View>
+          {type ? (
+            <View
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                flexDirection: "row",
+                width: 45,
+                alignItems: "center",
+              }}
+            >
+              <Image
+                source={require("../../assets/PageClass/calendar_add_on.png")}
+                style={[styles.icon, { width: 15, height: 15 }]}
+              />
+              <Image
+                source={require("../../assets/PageClass/add_circle.png")}
+                style={[styles.icon, { width: 15, height: 15 }]}
+              />
+            </View>
+          ) : (
+            ""
+          )}
+        </View>
         <View
           style={{
             display: "flex",
@@ -77,7 +110,7 @@ const CardClass = ({ item }) => {
         </View>
         <View
           style={{
-            marginTop: 8,
+            marginTop: 5,
             flexDirection: "row",
             display: "flex",
             justifyContent: "space-between",
@@ -85,9 +118,11 @@ const CardClass = ({ item }) => {
         >
           <View
             style={{
-              height: 49,
+              height: type ? "" : 49,
               display: "flex",
               justifyContent: "space-around",
+              flexDirection: type ? "row" : "",
+              width: type ? "100%" : ""
             }}
           >
             <View style={styles.boxData}>
@@ -112,23 +147,27 @@ const CardClass = ({ item }) => {
               <Text style={styles.textData}>{item.difficulty}</Text>
             </View>
           </View>
-          <View
-            style={{
-              height: 49,
-              display: "flex",
-              justifyContent: "space-around",
-              width: 20,
-            }}
-          >
-            <Image
-              source={require("../../assets/PageClass/calendar_add_on.png")}
-              style={[styles.icon, { width: 15, height: 15 }]}
-            />
-            <Image
-              source={require("../../assets/PageClass/add_circle.png")}
-              style={[styles.icon, { width: 15, height: 15 }]}
-            />
-          </View>
+          {type ? (
+            ""
+          ) : (
+            <View
+              style={{
+                height: 49,
+                display: "flex",
+                justifyContent: "space-around",
+                width: 20,
+              }}
+            >
+              <Image
+                source={require("../../assets/PageClass/calendar_add_on.png")}
+                style={[styles.icon, { width: 15, height: 15 }]}
+              />
+              <Image
+                source={require("../../assets/PageClass/add_circle.png")}
+                style={[styles.icon, { width: 15, height: 15 }]}
+              />
+            </View>
+          )}
         </View>
       </View>
     </View>
@@ -147,8 +186,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
   posterImage: {
-    width: 120,
-    height: 80,
     resizeMode: "cover",
     margin: 0,
     marginBottom: 6,

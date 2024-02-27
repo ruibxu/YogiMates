@@ -34,14 +34,13 @@ const SliderRecommended = () => {
   };
 
   const handleOnViewableItemsChanged = useRef(({ viewableItems }) => {
-    // console.log('viewableItems', viewableItems);
+    console.log('viewableItems', viewableItems[0].index);
     setIndex(viewableItems[0].index);
   }).current;
 
   const viewabilityConfig = useRef({
     itemVisiblePercentThreshold: 50,
   }).current;
-  
 
   return (
     <View
