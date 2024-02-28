@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
       paddingHorizontal: 24,
       marginBottom: 15,
-      fontWeight: 600,
+      // fontWeight: 600,
     },
     posterImage: {
       width: 90,

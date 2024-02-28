@@ -12,19 +12,25 @@ const CardClass = ({ item, type }) => {
         alignItems: "center",
         width: type ? 160 : 120,
         height: type ? 158 : 200,
-        shadowColor: "#000000",
-        shadowOffset: {
-          width: 1,
-          height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 2,
+        // shadowColor: "#000000",
+        // shadowOffset: {
+        //   width: 0,
+        //   height: 2,
+        // },
+        // shadowOpacity: 0.2,
+        // shadowRadius: 2,
+        // elevation: 3,
         overflow: "hidden",
-        marginBottom: type ? 20 : ""
+        marginBottom: type ? 20 : "",
       }}
     >
-      <Image source={item.img} style={[styles.posterImage, {width: type ? 160 : 120, height: type ? 86 : 80}]} />
+      <Image
+        source={item.img}
+        style={[
+          styles.posterImage,
+          { width: type ? 160 : 120, height: type ? 86 : 80 },
+        ]}
+      />
       <View style={styles.container}>
         <View
           style={{
@@ -92,7 +98,7 @@ const CardClass = ({ item, type }) => {
               styles.text,
               {
                 fontSize: 7,
-                fontWeight: 600,
+                // fontWeight: 600,
               },
             ]}
           >
@@ -102,7 +108,7 @@ const CardClass = ({ item, type }) => {
                 styles.text,
                 {
                   fontSize: 7,
-                  fontWeight: 200,
+                  // fontWeight: 200,
                 },
               ]}
             >{`(${item.commentCount})`}</Text>
@@ -122,7 +128,7 @@ const CardClass = ({ item, type }) => {
               display: "flex",
               justifyContent: "space-around",
               flexDirection: type ? "row" : "",
-              width: type ? "100%" : ""
+              width: type ? "100%" : "",
             }}
           >
             <View style={styles.boxData}>
@@ -170,6 +176,7 @@ const CardClass = ({ item, type }) => {
           )}
         </View>
       </View>
+      <View style={styles.bottomShadow} />
     </View>
   );
 };
@@ -181,7 +188,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.text,
-    fontWeight: 600,
+    // fontWeight: 600,
     width: "100%",
     alignItems: "flex-start",
   },
@@ -192,7 +199,7 @@ const styles = StyleSheet.create({
   },
   textData: {
     color: "#CD6D4F",
-    fontWeight: 600,
+    // fontWeight: 600,
     fontSize: 7,
     marginLeft: 5,
   },
@@ -204,6 +211,14 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+  },
+  bottomShadow: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 4, // Ajusta según la altura deseada de la sombra
+    backgroundColor: "rgba(0, 0, 0, 0.1)", // Color de la sombra
   },
 });
 

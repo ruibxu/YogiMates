@@ -10,7 +10,6 @@ import {
 import { theme } from "../../theme";
 import { dataCategoryClass } from "../../data/DataCategoryClass";
 
-
 const width = Dimensions.get("window").width;
 
 const CONTAINER_SPACE = width * 0.281;
@@ -40,23 +39,25 @@ const SliderCategory = ({ navigation }) => {
                     alignItems: "center",
                     width: 90,
                     height: 120,
-                    elevation: 5,
-                    shadowColor: "#000000",
-                    shadowOffset: { width: 0, height: 2 },
-                    shadowOpacity: 0.3,
-                    shadowRadius: 2,
+                    overflow: "hidden"
+                    // elevation: 5,
+                    // shadowColor: "#000000",
+                    // shadowOffset: { width: 0, height: 2 },
+                    // shadowOpacity: 0.3,
+                    // shadowRadius: 2,
                   }}
                 >
                   <Image source={item.img} style={styles.posterImage} />
                   <Text
                     style={{
                       fontSize: 12,
-                      fontWeight: 600,
+                      // fontWeight: 600,
                       color: item.titleColor,
                     }}
                   >
                     {item.title}
                   </Text>
+                  <View style={styles.bottomShadow} />
                 </View>
               </View>
             </TouchableOpacity>
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingHorizontal: 24,
     marginBottom: 15,
-    fontWeight: 600,
+    // fontWeight: 600,
   },
   posterImage: {
     width: 90,
@@ -84,6 +85,15 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     margin: 0,
     marginBottom: 6,
+  },
+  bottomShadow: {
+    position: "absolute",
+    left: 0,
+    borderRadius: 10,
+    right: 0,
+    bottom: 0,
+    height: 4, // Ajusta según la altura deseada de la sombra
+    backgroundColor: "rgba(0, 0, 0, 0.1)", // Color de la sombra
   },
 });
 
