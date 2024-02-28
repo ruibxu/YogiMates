@@ -22,8 +22,8 @@ const Home = () => {
       <View style={styles.card}>
         <View style={styles.content}>
           <Image
-            source={require("/home/kwamboka/prifina/Yoga-app/assets/meditation-303260_640.webp")} // or provide a URL
-            style={{ width: 100, height: 150 }} // Set width and height as per your requirement
+            source={require("/home/kwamboka/prifina/Yoga-app/assets/homeyoga.png")} // or provide a URL
+            style={{ width: 124, height: 150 }} // Set width and height as per your requirement
           />
           <CircularProgressBar
             radius={45}
