@@ -19,7 +19,7 @@ const Home = () => {
       </View>
 
 <Text style={styles.title}>Weekly goals</Text>
-      <View style={styles.card}>
+      <View style={[styles.card,{ backgroundColor:"#F7E4D2"}]}>
         <View style={styles.content}>
           <Image
             source={require("/home/kwamboka/prifina/Yoga-app/assets/homeyoga.png")} // or provide a URL
@@ -29,20 +29,20 @@ const Home = () => {
             radius={45}
             strokeWidth={10}
             progress={progress}
-            color="#00ff00" // Green color for progress
-            bgColor="#e0e0e0" // Light gray color for background
+            color="#CD6D4F" // Green color for progress
+            bgColor="#CD6D4F69" // Light gray color for background
           />
           <View style={styles.time}>
             <View style={styles.subtime}>
-              <AntDesign name="clockcircle" size={24} color="black" />
+              <AntDesign name="clockcircle" size={24} color="#CD6D4F" />
               <Text>14 mins</Text>
             </View>
             <View style={styles.subtime}>
-              <FontAwesome5 name="fire-alt" size={24} color="black" />
+              <FontAwesome5 name="fire-alt" size={24} color="#CD6D4F" />
               <Text>312 kal</Text>
             </View>
             <View style={styles.subtime}>
-              <MaterialIcons name="bar-chart" size={24} color="black" />
+              <MaterialIcons name="bar-chart" size={24} color="#CD6D4F" />
               <Text>Beginner</Text>
             </View>
           </View>
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontWeight: "bold",
+    // fontWeight: "bold",
     marginTop: 15,
   },
   description: {
