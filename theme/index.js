@@ -1,5 +1,3 @@
-
-
 export const theme = {
     colors: {
         primary: '#dfeae2', // primary color for the app, UI elements buttons.
