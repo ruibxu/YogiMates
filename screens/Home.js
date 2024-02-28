@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { theme } from "../theme";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
@@ -11,15 +11,16 @@ import { MaterialIcons } from "@expo/vector-icons";
 const Home = () => {
   const progress = 70;
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
+    <ScrollView>
+<View style={styles.container}>
+      {/* <View style={styles.header}>
         <AntDesign name="caretleft" size={30} color="black" />
-        {/* <Text style={{ color: theme.colors.text }}>Home</Text> */}
+        <Text style={{ color: theme.colors.text }}>Home</Text>
         <FontAwesome name="circle" size={30} color="black" />
-      </View>
+      </View> */}
 
-<Text style={styles.title}>Weekly goals</Text>
-      <View style={[styles.card,{ backgroundColor:"#F7E4D2"}]}>
+      <Text style={styles.title}>Weekly goals</Text>
+      <View style={[styles.card, { backgroundColor: "#F7E4D2" }]}>
         <View style={styles.content}>
           <Image
             source={require("/home/kwamboka/prifina/Yoga-app/assets/homeyoga.png")} // or provide a URL
@@ -49,7 +50,7 @@ const Home = () => {
         </View>
       </View>
       <Text style={styles.title}>Analysis summary</Text>
-      <View style={styles.card}>
+      <View style={[styles.card, { backgroundColor: "#DFEAE2" }]}>
         <View style={styles.content}>
           <Text style={styles.description}>description</Text>
         </View>
@@ -62,6 +63,8 @@ const Home = () => {
         </View>
       </View>
     </View>
+    </ScrollView>
+    
   );
 };
 
