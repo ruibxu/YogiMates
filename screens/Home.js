@@ -20,11 +20,11 @@ const Home = () => {
       </View> */}
 
       <Text style={styles.title}>Weekly goals</Text>
-      <View style={[styles.card, { backgroundColor: "#F7E4D2" }]}>
+      <View style={[styles.card, { backgroundColor: "#F7E4D2", height:150 }]}>
         <View style={styles.content}>
           <Image
             source={require("/home/kwamboka/prifina/Yoga-app/assets/homeyoga.png")} // or provide a URL
-            style={{ width: 124, height: 150 }} // Set width and height as per your requirement
+            style={{ width: 124, height: 124 }} // Set width and height as per your requirement
           />
           <CircularProgressBar
             radius={45}
@@ -50,9 +50,16 @@ const Home = () => {
         </View>
       </View>
       <Text style={styles.title}>Analysis summary</Text>
-      <View style={[styles.card, { backgroundColor: "#DFEAE2" }]}>
+      <View style={[styles.card, { backgroundColor: "#DFEAE2" , height:250}]}>
         <View style={styles.content}>
-          <Text style={styles.description}>description</Text>
+        <Image
+            source={require("/home/kwamboka/prifina/Yoga-app/assets/analysis.png")} // or provide a URL
+            style={{ width: 124, height: 150 }} // Set width and height as per your requirement
+          />
+           <Image
+            source={require("/home/kwamboka/prifina/Yoga-app/assets/analysis.png")} // or provide a URL
+            style={{ width: 124, height: 150 }} // Set width and height as per your requirement
+          />
         </View>
       </View>
 
