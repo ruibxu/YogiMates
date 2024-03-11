@@ -7,6 +7,9 @@ import { Image } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import CircularProgressBar from "../components/progressBar";
 import { MaterialIcons } from "@expo/vector-icons";
+import homeyoga from '../assets/homeyoga.png';
+import analysis from '../assets/analysis.png';
+
 
 const Home = () => {
   const progress = 70;
@@ -23,7 +26,7 @@ const Home = () => {
       <View style={[styles.card, { backgroundColor: "#F7E4D2", height:150 }]}>
         <View style={styles.content}>
           <Image
-            source={require("/home/kwamboka/prifina/Yoga-app/assets/homeyoga.png")} // or provide a URL
+            source={homeyoga} // or provide a URL
             style={{ width: 124, height: 124 }} // Set width and height as per your requirement
           />
           <CircularProgressBar
@@ -53,11 +56,11 @@ const Home = () => {
       <View style={[styles.card, { backgroundColor: "#DFEAE2" , height:250}]}>
         <View style={styles.content}>
         <Image
-            source={require("/home/kwamboka/prifina/Yoga-app/assets/analysis.png")} // or provide a URL
+            source={analysis} // or provide a URL
             style={{ width: 124, height: 150 }} // Set width and height as per your requirement
           />
            <Image
-            source={require("/home/kwamboka/prifina/Yoga-app/assets/analysis.png")} // or provide a URL
+            source={analysis} // or provide a URL
             style={{ width: 124, height: 150 }} // Set width and height as per your requirement
           />
         </View>

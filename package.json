@@ -9,6 +9,9 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@dynamic-data/fitbit-data": "^0.0.9",
+    "@dynamic-data/oura-data": "^0.0.9",
+    "@dynamic-data/peloton-data": "^0.0.9",
     "@react-navigation/bottom-tabs": "^6.5.12",
     "@react-navigation/native": "^6.1.10",
     "@react-navigation/stack": "^6.3.21",
