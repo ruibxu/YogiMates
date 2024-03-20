@@ -7,74 +7,131 @@ import { Image } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import CircularProgressBar from "../components/progressBar";
 import { MaterialIcons } from "@expo/vector-icons";
-import homeyoga from '../assets/homeyoga.png';
-import analysis from '../assets/analysis.png';
+import homeyoga from "../assets/homeyoga.png";
+import analysis from "../assets/analysis.png";
+import { ActivitySummary } from "@dynamic-data/oura-data/dist/cjs/mockups/activitySummary";
+import {
+  ActivitiesData,
+  ActivitiesDataAsync,
+  ActivitiesSummary,
+  ActivitiesSummaryAsync,
+  HeartRateData,
+  HeartRateDataAsync,
+  HeartRateSummary,
+  HeartRateSummaryAsync,
+  SleepData,
+  SleepDataAsync,
+  SleepQuality,
+  SleepQualityAsync,
+  SleepSummary,
+  SleepSummaryAsync,
+} from "@dynamic-data/oura-data/src/mockups";
 
+const Home = (summaryData) => {
+  // Access the properties of the ActivitySummary object
+  console.log("Summary Date:", ActivitySummary.summary_date);
+  console.log("Steps:", ActivitySummary.steps);
+  console.log("Total Calories Burnt:", ActivitySummary.cal_total);
 
-const Home = () => {
-  const progress = 70;
+  // Function to calculate the time spent exercising within a specific date and time range
+  function calculateExerciseTime(activitySummary, day_start, day_end) {
+    // Extract relevant data
+    const { activity_log } = activitySummary;
+
+    // Initialize total exercise time
+    let totalExerciseTime = 0;
+
+    // Convert day_start and day_end to Date objects
+    const startDate = new Date(day_start);
+    const endDate = new Date(day_end);
+
+    // Calculate the duration of the exercise session in seconds
+    const startTime = new Date(ActivitySummary.day_start);
+    console.log(startTime);
+    const endTime = new Date(ActivitySummary.day_end);
+    const durationInSeconds = (endTime - startTime) / 1000; // Convert milliseconds to seconds
+
+    // Add the duration to the total exercise time
+    totalExerciseTime += durationInSeconds;
+
+    // Convert total exercise time from seconds to minutes (or hours if needed)
+    const totalExerciseTimeMinutes = totalExerciseTime / 60;
+    console.log(totalExerciseTimeMinutes);
+
+    return totalExerciseTimeMinutes;
+  }
+  const exerciseTime =Math.floor( calculateExerciseTime(
+    ActivitySummary,
+    ActivitySummary?.day_start,
+    ActivitySummary?.day_end
+  ));
+
+  const progress = ActivitySummary.score;
   return (
     <ScrollView>
-<View style={styles.container}>
-      {/* <View style={styles.header}>
+      <View style={styles.container}>
+        {/* <View style={styles.header}>
         <AntDesign name="caretleft" size={30} color="black" />
         <Text style={{ color: theme.colors.text }}>Home</Text>
         <FontAwesome name="circle" size={30} color="black" />
       </View> */}
 
-      <Text style={styles.title}>Weekly goals</Text>
-      <View style={[styles.card, { backgroundColor: "#F7E4D2", height:150 }]}>
-        <View style={styles.content}>
-          <Image
-            source={homeyoga} // or provide a URL
-            style={{ width: 124, height: 124 }} // Set width and height as per your requirement
-          />
-          <CircularProgressBar
-            radius={45}
-            strokeWidth={10}
-            progress={progress}
-            color="#CD6D4F" // Green color for progress
-            bgColor="#CD6D4F69" // Light gray color for background
-          />
-          <View style={styles.time}>
-            <View style={styles.subtime}>
-              <AntDesign name="clockcircle" size={24} color="#CD6D4F" />
-              <Text>14 mins</Text>
-            </View>
-            <View style={styles.subtime}>
-              <FontAwesome5 name="fire-alt" size={24} color="#CD6D4F" />
-              <Text>312 kal</Text>
-            </View>
-            <View style={styles.subtime}>
-              <MaterialIcons name="bar-chart" size={24} color="#CD6D4F" />
-              <Text>Beginner</Text>
+        <Text style={styles.title}>Weekly goals</Text>
+        <View
+          style={[styles.card, { backgroundColor: "#F7E4D2", height: 150 }]}
+        >
+          <View style={styles.content}>
+            <Image
+              source={homeyoga} // or provide a URL
+              style={{ width: 124, height: 124 }} // Set width and height as per your requirement
+            />
+            <CircularProgressBar
+              radius={45}
+              strokeWidth={10}
+              progress={progress}
+              color="#CD6D4F" // Green color for progress
+              bgColor="#CD6D4F69" // Light gray color for background
+            />
+            <View style={styles.time}>
+              <View style={styles.subtime}>
+                <AntDesign name="clockcircle" size={24} color="#CD6D4F" />
+                <Text>{exerciseTime} mins</Text>
+              </View>
+              <View style={styles.subtime}>
+                <FontAwesome5 name="fire-alt" size={24} color="#CD6D4F" />
+                <Text>{ActivitySummary.cal_total} kal</Text>
+              </View>
+              <View style={styles.subtime}>
+                <MaterialIcons name="bar-chart" size={24} color="#CD6D4F" />
+                <Text>Beginner</Text>
+              </View>
             </View>
           </View>
         </View>
-      </View>
-      <Text style={styles.title}>Analysis summary</Text>
-      <View style={[styles.card, { backgroundColor: "#DFEAE2" , height:250}]}>
-        <View style={styles.content}>
-        <Image
-            source={analysis} // or provide a URL
-            style={{ width: 124, height: 150 }} // Set width and height as per your requirement
-          />
-           <Image
-            source={analysis} // or provide a URL
-            style={{ width: 124, height: 150 }} // Set width and height as per your requirement
-          />
+        <Text style={styles.title}>Analysis summary</Text>
+        <View
+          style={[styles.card, { backgroundColor: "#DFEAE2", height: 250 }]}
+        >
+          <View style={styles.content}>
+            <Image
+              source={analysis} // or provide a URL
+              style={{ width: 124, height: 150 }} // Set width and height as per your requirement
+            />
+            <Image
+              source={analysis} // or provide a URL
+              style={{ width: 124, height: 150 }} // Set width and height as per your requirement
+            />
+          </View>
         </View>
-      </View>
 
-      <Text style={styles.title}>Recommendations</Text>
-      <View style={styles.card}>
-        <View style={styles.content}>
-          <Text style={styles.description}>description</Text>
+        <Text style={styles.title}>Recommendations</Text>
+        <View style={styles.card}>
+          <View style={styles.content}>
+            <Text style={styles.description}>description</Text>
+          </View>
         </View>
       </View>
-    </View>
     </ScrollView>
-    
   );
 };
 
