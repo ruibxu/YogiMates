@@ -9,6 +9,8 @@ import CircularProgressBar from "../components/progressBar";
 import { MaterialIcons } from "@expo/vector-icons";
 import homeyoga from "../assets/homeyoga.png";
 import analysis from "../assets/analysis.png";
+import { SafeAreaView } from 'react-native';
+import YogaVideos from "../data/YogaVideos";
 import { ActivitySummary } from "@dynamic-data/oura-data/dist/cjs/mockups/activitySummary";
 import {
   ActivitiesData,
@@ -127,7 +129,8 @@ const Home = (summaryData) => {
         <Text style={styles.title}>Recommendations</Text>
         <View style={styles.card}>
           <View style={styles.content}>
-            <Text style={styles.description}>description</Text>
+            <YogaVideos />
+            {/* <Text style={styles.description}>description</Text> */}
           </View>
         </View>
       </View>
