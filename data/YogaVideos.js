@@ -4,6 +4,9 @@ import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import axios from "axios";
 import { ScrollView } from "react-native-gesture-handler";
+import YogaVideoCarousel from "../components/carousel";
+import Video from 'react-native-video';
+import { useNavigation } from '@react-navigation/native';
 
 const YogaVideos = () => {
   const [videos, setVideos] = useState([]);
@@ -38,11 +41,14 @@ const YogaVideos = () => {
         <View
           style={{ flexDirection: "row", alignItems: "center", margin: 10 }}
         >
-          <Image
+          {/* <Image
             source={{ uri: item.snippet.thumbnails.default.url }}
             style={{ width: 120, height: 90, marginRight: 10 }}
           />
-          <Text>{item.snippet.title}</Text>
+          <Text>{item.snippet.title}</Text> */}
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <YogaVideoCarousel videos={videos} onVideoPress={handleVideoPress} />
+    </View>
         </View>
       </TouchableOpacity>
     </ScrollView>
@@ -59,10 +65,10 @@ const YogaVideos = () => {
     keyExtractor={(item) => item.id.videoId}
   />;
 
-  //   const handleVideoPress = (videoId) => {
-  //     // Implement navigation or video player integration here
-  //     console.log('Video ID:', videoId);
-  //   };
+    // const handleVideoPress = (videoId) => {
+    //   // Implement navigation or video player integration here
+    //   console.log('Video ID:', videoId);
+    // };
 
   return (
     <FlatList

@@ -127,7 +127,7 @@ const Home = (summaryData) => {
         </View>
 
         <Text style={styles.title}>Recommendations</Text>
-        <View style={styles.card}>
+        <View style={styles.carousel}>
           <View style={styles.content}>
             <YogaVideos />
             {/* <Text style={styles.description}>description</Text> */}
@@ -147,6 +147,9 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 15,
+  },
+  carousel:{
+   
   },
   card: {
     backgroundColor: "#fff",
