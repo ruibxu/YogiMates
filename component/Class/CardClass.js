@@ -4,6 +4,7 @@ import { theme } from "../../theme";
 import StarRating from "../Rating";
 
 const CardClass = ({ item, type }) => {
+  // console.log(item)
   return (
     <View
       style={{
@@ -25,7 +26,7 @@ const CardClass = ({ item, type }) => {
       }}
     >
       <Image
-        source={item.img}
+        source={item.thumbnailUrl}
         style={[
           styles.posterImage,
           { width: type ? 160 : 120, height: type ? 86 : 80 },
@@ -58,7 +59,7 @@ const CardClass = ({ item, type }) => {
                 },
               ]}
             >
-              Instructor Name
+              {item.titleInstructor}
             </Text>
           </View>
           {type ? (
@@ -92,7 +93,7 @@ const CardClass = ({ item, type }) => {
             marginTop: 5,
           }}
         >
-          <StarRating rating={item.rating} />
+          <StarRating rating={item.starsRating} />
           <Text
             style={[
               styles.text,
@@ -102,7 +103,7 @@ const CardClass = ({ item, type }) => {
               },
             ]}
           >
-            {item.rating}
+            {item.starsRating}
             <Text
               style={[
                 styles.text,
@@ -136,7 +137,7 @@ const CardClass = ({ item, type }) => {
                 source={require("../../assets/PageClass/schedule.png")}
                 style={[styles.icon, { width: 10, height: 10 }]}
               />
-              <Text style={styles.textData}>{item.minutes} mins</Text>
+              <Text style={styles.textData}>{item.totalMinutes} mins</Text>
             </View>
             <View style={styles.boxData}>
               <Image

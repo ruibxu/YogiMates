@@ -8,13 +8,47 @@ import {
   View,
 } from "react-native";
 import { theme } from "../../theme";
-import { dataCategoryClass } from "../../data/DataCategoryClass";
+// import { dataCategoryClass } from "../../data/dataCategoryClass";
+import { fetchPoses, mapPosesToDataCategoryClass } from '../../data/DataCategory';
+import { useEffect, useState } from "react";
+
+
 
 const width = Dimensions.get("window").width;
 
 const CONTAINER_SPACE = width * 0.281;
 
 const SliderCategory = ({ navigation }) => {
+  // const [poses, setPoses] = useState([]);
+
+  // useEffect(() => {
+  //   // Obtener las poses desde la API y actualizar el estado
+  //   const fetchData = async () => {
+  //     const posesData = await fetchPoses();
+  //     setPoses(posesData);
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  // Mapear los datos de las poses al formato de dataCategoryClass
+  const [fakeData, setFakeData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await mapPosesToDataCategoryClass();
+        setFakeData(data);
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  // const data = mapPosesToDataCategoryClass(poses);
+  console.log(fakeData)
+
   const handleItemPress = (title) => {
     // Navegar a la pantalla de categoría o sección con una ruta dinámica
     navigation.navigate(`CategoryClass`, { title });
@@ -23,7 +57,7 @@ const SliderCategory = ({ navigation }) => {
   return (
     <View style={{ width: width, height: 130, marginBottom: 20 }}>
       <FlatList
-        data={dataCategoryClass}
+        data={fakeData}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.title}
         contentContainerStyle={{ paddingLeft: 24 }}
@@ -47,7 +81,7 @@ const SliderCategory = ({ navigation }) => {
                     // shadowRadius: 2,
                   }}
                 >
-                  <Image source={item.img} style={styles.posterImage} />
+                  <Image source={item.img ? { uri: item.img } : null} style={styles.posterImage} />
                   <Text
                     style={{
                       fontSize: 12,

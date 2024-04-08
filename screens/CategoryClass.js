@@ -1,12 +1,31 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { theme } from "../theme";
-import { dataClassesClass } from "../data/DataClassesClass";
 import CardClass from "../component/Class/CardClass";
+import { generateFakeDataClassesClass } from "../data/DataClassesClass";
 
 const CategoryClass = ({ route, navigation }) => {
   const selectedCategory = route.params;
   console.log(route.params.title);
+  const [fakeData, setFakeData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await generateFakeDataClassesClass();
+        const filteredData = data.filter(
+          (item) => item.yogismData === selectedCategory.title
+        );
+        setFakeData(filteredData);
+      } catch (error) {
+        console.error("Error al obtener datos:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(fakeData);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -18,6 +37,7 @@ const CategoryClass = ({ route, navigation }) => {
       },
     });
   }, [navigation, selectedCategory]);
+  //hacer un filter para filtra la fakeData por selectedCategory.title
 
   return (
     <ScrollView>
@@ -27,7 +47,7 @@ const CategoryClass = ({ route, navigation }) => {
           <Image source={require("../assets/PageClass/filter_list.png")} />
         </View>
         <View style={styles.options}>
-          {dataClassesClass.map((item) => (
+          {fakeData.map((item) => (
             <CardClass key={item.title} item={item} type={true} />
           ))}
         </View>
@@ -50,7 +70,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 20
+    marginBottom: 20,
   },
   options: {
     flexDirection: "row",
