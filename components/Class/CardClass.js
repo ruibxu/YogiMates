@@ -109,7 +109,7 @@ const CardClass = ({ item, type }) => {
                 styles.text,
                 {
                   fontSize: 7,
-                  // fontWeight: 200,
+                  fontWeight: "200",
                 },
               ]}
             >{`(${item.commentCount})`}</Text>
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.text,
-    // fontWeight: 600,
+    fontWeight: "600",
     width: "100%",
     alignItems: "flex-start",
   },
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   },
   textData: {
     color: "#CD6D4F",
-    // fontWeight: 600,
+    fontWeight: "600",
     fontSize: 7,
     marginLeft: 5,
   },

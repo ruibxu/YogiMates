@@ -1,8 +1,8 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { theme } from "../theme";
+import { dataClassesClass } from "../data/DataClassesClass";
 import CardClass from "../component/Class/CardClass";
-import { generateFakeDataClassesClass } from "../data/DataClassesClass";
 
 const CategoryClass = ({ route, navigation }) => {
   const selectedCategory = route.params;
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    // fontWeight: 600,
+    fontWeight: 600,
     color: theme.colors.text,
   },
   filterBox: {
