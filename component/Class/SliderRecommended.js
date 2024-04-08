@@ -170,7 +170,7 @@ const SliderRecommended = () => {
                                 styles.text,
                                 {
                                   fontSize: 10,
-                                  // fontWeight: 600,
+                                  fontWeight: 600,
                                 },
                               ]}
                             >
