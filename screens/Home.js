@@ -7,27 +7,11 @@ import { Image } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import CircularProgressBar from "../components/progressBar";
 import { MaterialIcons } from "@expo/vector-icons";
-import homeyoga from "../assets/homeyoga.png";
+import homeyoga2 from "../assets/homeyoga2.png";
 import analysis from "../assets/analysis.png";
 import { SafeAreaView } from 'react-native';
 import YogaVideos from "../data/YogaVideos";
 import { ActivitySummary } from "@dynamic-data/oura-data/dist/cjs/mockups/activitySummary";
-import {
-  ActivitiesData,
-  ActivitiesDataAsync,
-  ActivitiesSummary,
-  ActivitiesSummaryAsync,
-  HeartRateData,
-  HeartRateDataAsync,
-  HeartRateSummary,
-  HeartRateSummaryAsync,
-  SleepData,
-  SleepDataAsync,
-  SleepQuality,
-  SleepQualityAsync,
-  SleepSummary,
-  SleepSummaryAsync,
-} from "@dynamic-data/oura-data/src/mockups";
 
 const Home = (summaryData) => {
   // Access the properties of the ActivitySummary object
@@ -84,7 +68,7 @@ const Home = (summaryData) => {
         >
           <View style={styles.content}>
             <Image
-              source={homeyoga} // or provide a URL
+              source={homeyoga2} // or provide a URL
               style={{ width: 124, height: 124 }} // Set width and height as per your requirement
             />
             <CircularProgressBar
