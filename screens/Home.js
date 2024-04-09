@@ -80,7 +80,7 @@ const Home = (summaryData) => {
 
         <Text style={styles.title}>Weekly goals</Text>
         <View
-          style={[styles.card, { backgroundColor: "#F7E4D2", height: 150 }]}
+          style={[styles.card, { backgroundColor: "#DCEDFA", height: 150 }]}
         >
           <View style={styles.content}>
             <Image
@@ -91,20 +91,20 @@ const Home = (summaryData) => {
               radius={45}
               strokeWidth={10}
               progress={progress}
-              color="#CD6D4F" // Green color for progress
+              color="#90B4A1" // Green color for progress
               bgColor="#CD6D4F69" // Light gray color for background
             />
             <View style={styles.time}>
               <View style={styles.subtime}>
-                <AntDesign name="clockcircle" size={24} color="#CD6D4F" />
+                <AntDesign name="clockcircle" size={24} color="#90B4A1" />
                 <Text>{exerciseTime} mins</Text>
               </View>
               <View style={styles.subtime}>
-                <FontAwesome5 name="fire-alt" size={24} color="#CD6D4F" />
+                <FontAwesome5 name="fire-alt" size={24} color="#90B4A1" />
                 <Text>{ActivitySummary.cal_total} kal</Text>
               </View>
               <View style={styles.subtime}>
-                <MaterialIcons name="bar-chart" size={24} color="#CD6D4F" />
+                <MaterialIcons name="bar-chart" size={24} color="#90B4A1" />
                 <Text>Beginner</Text>
               </View>
             </View>
