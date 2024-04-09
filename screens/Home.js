@@ -129,8 +129,8 @@ const Home = (summaryData) => {
         <Text style={styles.title}>Recommendations</Text>
         <View style={styles.carousel}>
           <View style={styles.content}>
-            <YogaVideos />
-            {/* <Text style={styles.description}>description</Text> */}
+            {/* <YogaVideos /> */}
+            <Text style={styles.description}>description</Text>
           </View>
         </View>
       </View>
