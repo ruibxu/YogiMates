@@ -64,7 +64,7 @@ const Home = (summaryData) => {
 
         <Text style={styles.title}>Weekly goals</Text>
         <View
-          style={[styles.card, { backgroundColor: "#DCEDFA", height: 150 }]}
+          style={[styles.card, { backgroundColor: "#DFEAE2", height: 150 }]}
         >
           <View style={styles.content}>
             <Image
@@ -124,7 +124,7 @@ const Home = (summaryData) => {
 
         <Text style={styles.title}>Recommendations</Text>
         <View style={styles.carousel}>
-          <View style={styles.content}>
+          <View style={styles.recommendation}>
             {/* <YogaVideos /> */}
             <Text style={styles.description}>You haven't had streches in a while. We suppest you go to the class section and try out some streching yoga.</Text>
           </View>
@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 15,
+    backgroundColor:"#f1f3f1",
   },
   carousel:{
    
@@ -183,6 +184,8 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
+    lineHeight:30,
+    color:"#5E7167"
   },
   time: {
     flexDirection: "column",
@@ -193,4 +196,21 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: "center",
   },
+  labels:{
+
+  },
+  recommendation:{
+    backgroundColor: "#DFEAE2",
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5,
+    marginTop: 20,
+    // margin: 10,
+    padding: 30,
+   
+    // height: 200,
+  }
 });
