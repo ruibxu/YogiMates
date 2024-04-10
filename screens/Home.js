@@ -10,8 +10,8 @@ import { MaterialIcons } from "@expo/vector-icons";
 import homeyoga2 from "../assets/homeyoga2.png";
 import analysis from "../assets/Home_Muscles.png";
 import stress_management from "../assets/stress_management.png";
-import heart from "../assets/ecg_heart.png"
-import bedtime from "../assets/bedtime.png"
+import heart from "../assets/ecg_heart.png";
+import bedtime from "../assets/bedtime.png";
 import { SafeAreaView } from "react-native";
 import YogaVideos from "../data/YogaVideos";
 import { ActivitySummary } from "@dynamic-data/oura-data/dist/cjs/mockups/activitySummary";
@@ -118,22 +118,34 @@ const Home = (summaryData) => {
                 </View>
               </View>
               <View>
-                <View style={styles.labels}>
+                <View style={[styles.labels, {backgroundColor:"#F7D7DA"}]}>
+                  <Image
+                    source={heart} // or provide a URL
+                    style={{ width: 33, height: 33 }} // Set width and height as per your requirement
+                  />
                   <View>
                     <Text>120</Text>
                     <Text>mbp</Text>
                   </View>
                 </View>
-                <View style={styles.labels}>
+                <View style={[styles.labels, {backgroundColor:"#DEDEEA"}]}>
+                  <Image
+                    source={stress_management} // or provide a URL
+                    style={{ width: 33, height: 33 }} // Set width and height as per your requirement
+                  />
                   <View>
                     <Text>120</Text>
-                    <Text>mbp</Text>
+                    
                   </View>
                 </View>
-                <View style={styles.labels}>
+                <View style={[styles.labels, {backgroundColor:"#DCEDFA"}]}>
+                  <Image
+                    source={bedtime} // or provide a URL
+                    style={{ width: 33, height: 33 }} // Set width and height as per your requirement
+                  />
                   <View>
                     <Text>120</Text>
-                    <Text>mbp</Text>
+                    
                   </View>
                 </View>
               </View>
@@ -208,7 +220,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     // fontWeight: "bold",
     marginTop: 15,
-    color:"#5E7167"
+    color: "#5E7167",
   },
   description: {
     fontSize: 16,
@@ -230,14 +242,14 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 5,
     height: 42,
-    backgroundColor:"red",
+    backgroundColor: "red",
     width: 150,
     borderRadius: 4,
-    flexDirection: "column",
-    alignItems:"center",
+    flexDirection: "row",
+    gap: 10,
+    alignItems: "center",
     justifyContent: "center",
     marginTop: 15,
-
   },
   recommendation: {
     backgroundColor: "#DFEAE2",
