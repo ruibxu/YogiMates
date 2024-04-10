@@ -99,10 +99,22 @@ const Home = (summaryData) => {
           style={[styles.card, { backgroundColor: "#DFEAE2", height: 250 }]}
         >
           <View style={styles.content}>
-            <Image
-              source={analysis} // or provide a URL
-              style={{ width: 124, height: 150 }} // Set width and height as per your requirement
-            />
+           <View>
+           <View style={styles.Analysis1}>
+              <View style={styles.subtime}>
+                <AntDesign name="clockcircle" size={24} color="#90B4A1" />
+                <Text>{exerciseTime} </Text>
+              </View>
+              <View style={styles.subtime}>
+                <FontAwesome5 name="fire-alt" size={24} color="#90B4A1" />
+                <Text>{ActivitySummary.cal_total} </Text>
+              </View>
+              <View style={styles.subtime}>
+                <MaterialIcons name="bar-chart" size={24} color="#90B4A1" />
+                <Text>Beg</Text>
+              </View>
+            </View>
+           </View>
             <Image
               source={analysis} // or provide a URL
               style={{ width: 124, height: 150 }} // Set width and height as per your requirement
@@ -114,7 +126,7 @@ const Home = (summaryData) => {
         <View style={styles.carousel}>
           <View style={styles.content}>
             {/* <YogaVideos /> */}
-            <Text style={styles.description}>description</Text>
+            <Text style={styles.description}>You haven't had streches in a while. We suppest you go to the class section and try out some streching yoga.</Text>
           </View>
         </View>
       </View>
@@ -134,6 +146,10 @@ const styles = StyleSheet.create({
   },
   carousel:{
    
+  },
+  Analysis1:{
+    flexDirection:"row",
+    gap:2
   },
   card: {
     backgroundColor: "#fff",
