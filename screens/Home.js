@@ -134,7 +134,7 @@ const Home = (summaryData) => {
                     style={{ width: 33, height: 33 }} // Set width and height as per your requirement
                   />
                   <View>
-                    <Text>120</Text>
+                    <Text>Low</Text>
                     
                   </View>
                 </View>
@@ -144,7 +144,7 @@ const Home = (summaryData) => {
                     style={{ width: 33, height: 33 }} // Set width and height as per your requirement
                   />
                   <View>
-                    <Text>120</Text>
+                    <Text>8h 42m</Text>
                     
                   </View>
                 </View>
