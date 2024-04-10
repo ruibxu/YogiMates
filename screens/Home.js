@@ -12,6 +12,7 @@ import analysis from "../assets/Home_Muscles.png";
 import stress_management from "../assets/stress_management.png";
 import heart from "../assets/ecg_heart.png";
 import bedtime from "../assets/bedtime.png";
+import pen from "../assets/border_color.png"
 import { SafeAreaView } from "react-native";
 import YogaVideos from "../data/YogaVideos";
 import { ActivitySummary } from "@dynamic-data/oura-data/dist/cjs/mockups/activitySummary";
@@ -66,15 +67,21 @@ const Home = (summaryData) => {
         <Text style={{ color: theme.colors.text }}>Home</Text>
         <FontAwesome name="circle" size={30} color="black" />
       </View> */}
-
-        <Text style={styles.title}>Weekly goals</Text>
+        <View style={{ flexDirection:"row",gap:5 }}>
+          <Text style={styles.title}>Weekly goals </Text>
+          <Image
+              source={pen} // or provide a URL
+              style={{ width: 20, height: 20, marginTop: 15}} // Set width and height as per your requirement
+            />
+        </View>
+        
         <View
-          style={[styles.card, { backgroundColor: "#DFEAE2", height: 150 }]}
+          style={[styles.card, { backgroundColor: "#DFEAE2", height: 150, margin:15 }]}
         >
           <View style={styles.content}>
             <Image
               source={homeyoga2} // or provide a URL
-              style={{ width: 124, height: 124 }} // Set width and height as per your requirement
+              style={{ width: 100, height: 100 }} // Set width and height as per your requirement
             />
             <CircularProgressBar
               radius={45}
@@ -229,6 +236,7 @@ const styles = StyleSheet.create({
   },
   time: {
     flexDirection: "column",
+    marginLeft:5,
     gap: 15,
   },
   subtime: {
