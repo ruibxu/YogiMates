@@ -9,7 +9,7 @@ import CircularProgressBar from "../components/progressBar";
 import { MaterialIcons } from "@expo/vector-icons";
 import homeyoga2 from "../assets/homeyoga2.png";
 import analysis from "../assets/analysis.png";
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView } from "react-native";
 import YogaVideos from "../data/YogaVideos";
 import { ActivitySummary } from "@dynamic-data/oura-data/dist/cjs/mockups/activitySummary";
 
@@ -46,11 +46,13 @@ const Home = (summaryData) => {
 
     return totalExerciseTimeMinutes;
   }
-  const exerciseTime =Math.floor( calculateExerciseTime(
-    ActivitySummary,
-    ActivitySummary?.day_start,
-    ActivitySummary?.day_end
-  ));
+  const exerciseTime = Math.floor(
+    calculateExerciseTime(
+      ActivitySummary,
+      ActivitySummary?.day_start,
+      ActivitySummary?.day_end
+    )
+  );
 
   const progress = ActivitySummary.score;
   return (
@@ -95,26 +97,31 @@ const Home = (summaryData) => {
           </View>
         </View>
         <Text style={styles.title}>Analysis summary</Text>
-        <View
-          style={[styles.card, { backgroundColor: "#DFEAE2", height: 250 }]}
-        >
+        <View style={[styles.Analysiscard, { height: 250 }]}>
           <View style={styles.content}>
-           <View>
-           <View style={styles.Analysis1}>
-              <View style={styles.subtime}>
-                <AntDesign name="clockcircle" size={24} color="#90B4A1" />
-                <Text>{exerciseTime} </Text>
+            <View>
+              <View style={styles.Analysis1}>
+                <View style={styles.subtime}>
+                  <AntDesign name="clockcircle" size={24} color="#90B4A1" />
+                  <Text>{exerciseTime} </Text>
+                </View>
+                <View style={styles.subtime}>
+                  <FontAwesome5 name="fire-alt" size={24} color="#90B4A1" />
+                  <Text>{ActivitySummary.cal_total} </Text>
+                </View>
+                <View style={styles.subtime}>
+                  <MaterialIcons name="bar-chart" size={24} color="#90B4A1" />
+                  <Text>Beg</Text>
+                </View>
               </View>
-              <View style={styles.subtime}>
-                <FontAwesome5 name="fire-alt" size={24} color="#90B4A1" />
-                <Text>{ActivitySummary.cal_total} </Text>
-              </View>
-              <View style={styles.subtime}>
-                <MaterialIcons name="bar-chart" size={24} color="#90B4A1" />
-                <Text>Beg</Text>
+              <View>
+                <View style={styles.labels}>
+                  <View>
+                    <Text>120</Text>
+                  </View>
+                </View>
               </View>
             </View>
-           </View>
             <Image
               source={analysis} // or provide a URL
               style={{ width: 124, height: 150 }} // Set width and height as per your requirement
@@ -126,7 +133,10 @@ const Home = (summaryData) => {
         <View style={styles.carousel}>
           <View style={styles.recommendation}>
             {/* <YogaVideos /> */}
-            <Text style={styles.description}>You haven't had streches in a while. We suppest you go to the class section and try out some streching yoga.</Text>
+            <Text style={styles.description}>
+              You haven't had streches in a while. We suppest you go to the
+              class section and try out some streching yoga.
+            </Text>
           </View>
         </View>
       </View>
@@ -143,14 +153,12 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 15,
-    backgroundColor:"#f1f3f1",
+    backgroundColor: "#f1f3f1",
   },
-  carousel:{
-   
-  },
-  Analysis1:{
-    flexDirection:"row",
-    gap:2
+  carousel: {},
+  Analysis1: {
+    flexDirection: "row",
+    gap: 2,
   },
   card: {
     backgroundColor: "#fff",
@@ -163,7 +171,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     // margin: 10,
     padding: 10,
-    height: 200,
+    // height: 200,
+  },
+  Analysiscard: {
+    padding: 10,
   },
   image: {
     width: "100%",
@@ -184,8 +195,8 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
-    lineHeight:30,
-    color:"#5E7167"
+    lineHeight: 30,
+    color: "#5E7167",
   },
   time: {
     flexDirection: "column",
@@ -196,10 +207,22 @@ const styles = StyleSheet.create({
     gap: 10,
     alignItems: "center",
   },
-  labels:{
+  labels: {
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5,
+    height: 35,
+    backgroundColor:"red",
+    width: 140,
+    borderRadius: 4,
+    flexDirection: "column",
+    alignItems:"center",
+    justifyContent: "center",
+    marginTop: 15,
 
   },
-  recommendation:{
+  recommendation: {
     backgroundColor: "#DFEAE2",
     borderRadius: 8,
     shadowColor: "#000",
@@ -210,7 +233,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     // margin: 10,
     padding: 30,
-   
+
     // height: 200,
-  }
+  },
 });
