@@ -9,6 +9,9 @@ import CircularProgressBar from "../components/progressBar";
 import { MaterialIcons } from "@expo/vector-icons";
 import homeyoga2 from "../assets/homeyoga2.png";
 import analysis from "../assets/analysis.png";
+import stress_management from "../assets/stress_management.png";
+import heart from "../assets/ecg_heart.png"
+import bedtime from "../assets/bedtime.png"
 import { SafeAreaView } from "react-native";
 import YogaVideos from "../data/YogaVideos";
 import { ActivitySummary } from "@dynamic-data/oura-data/dist/cjs/mockups/activitySummary";
@@ -118,6 +121,19 @@ const Home = (summaryData) => {
                 <View style={styles.labels}>
                   <View>
                     <Text>120</Text>
+                    <Text>mbp</Text>
+                  </View>
+                </View>
+                <View style={styles.labels}>
+                  <View>
+                    <Text>120</Text>
+                    <Text>mbp</Text>
+                  </View>
+                </View>
+                <View style={styles.labels}>
+                  <View>
+                    <Text>120</Text>
+                    <Text>mbp</Text>
                   </View>
                 </View>
               </View>
@@ -212,9 +228,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 5,
-    height: 35,
+    height: 42,
     backgroundColor:"red",
-    width: 140,
+    width: 150,
     borderRadius: 4,
     flexDirection: "column",
     alignItems:"center",
