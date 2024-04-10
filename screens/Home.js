@@ -8,7 +8,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import CircularProgressBar from "../components/progressBar";
 import { MaterialIcons } from "@expo/vector-icons";
 import homeyoga2 from "../assets/homeyoga2.png";
-import analysis from "../assets/analysis.png";
+import analysis from "../assets/Home_Muscles.png";
 import stress_management from "../assets/stress_management.png";
 import heart from "../assets/ecg_heart.png"
 import bedtime from "../assets/bedtime.png"
@@ -208,6 +208,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     // fontWeight: "bold",
     marginTop: 15,
+    color:"#5E7167"
   },
   description: {
     fontSize: 16,
