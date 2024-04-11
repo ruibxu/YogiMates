@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 15,
-    backgroundColor:"#F7D7DA"
+    backgroundColor:"#f7e4d2"
   },
   recommendation: {
     backgroundColor: "#DFEAE2",
