@@ -1,11 +1,11 @@
-import { HeartRateSummary, HeartRateData, ActivitiesData} from "@dynamic-data/fitbit-data/src/mockups";
+import { HeartRateSummary, HeartRateData, activitiesData} from "@dynamic-data/fitbit-data/src/mockups";
 import { View, StyleSheet } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 import { theme } from '../../theme';
 const heartRate = () => {
-  const zoneNames = ActivitiesData.heartRateZones.map(zone => zone.name);
-  const maxHeartRates = ActivitiesData.heartRateZones.map(zone => zone.max);
-  const minHeartRates = ActivitiesData.heartRateZones.map(zone => zone.min);
+  const zoneNames = activitiesData.heartRateZones.map(zone => zone.name);
+  const maxHeartRates = activitiesData.heartRateZones.map(zone => zone.max);
+  const minHeartRates = activitiesData.heartRateZones.map(zone => zone.min);
 
   // Prepare dataset
   const dataset = {

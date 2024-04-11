@@ -1,10 +1,3 @@
-// Importa las imágenes en la parte superior del archivo
-import imgYoga1 from "../assets/PageClass/imgYoga1.png";
-import imgYoga2 from "../assets/PageClass/imgYoga2.png";
-import imgYoga3 from "../assets/PageClass/imgYoga3.png";
-import imgYoga4 from "../assets/PageClass/imgYoga4.png";
-import imgYoga5 from "../assets/PageClass/imgYoga5.png";
-
 const apiKey = "AIzaSyCSKGJiALGzcQMfjmFqJHZe6ycbL0JyNDM";
 const videoIds = [
   "o_73FeXw3ZI",
@@ -98,83 +91,8 @@ export const generateFakeDataClassesClass = async () => {
 
       // Agregar los datos del video al array
       videoDataArray.push(videoInfo);
-      console.log(yogismIndex);
       yogismIndex = ((yogismIndex + 1) % 4) + 4;
     }
   }
   return videoDataArray;
 };
-
-// export const generateFakeDataClassesClass = async () => {
-//   const fakeData = [];
-//   const titles = [
-//     "Position_yoga_1",
-//     "Position_yoga_2",
-//     "Position_yoga_3",
-//     "Position_yoga_4",
-//     "Position_yoga_5",
-//   ];
-
-//   for (let i = 0; i < titles.length; i++) {
-//     try {
-//       const response = await fetch("https://yoga-api-nzy4.onrender.com/v1/poses");
-//       if (!response.ok) {
-//         throw new Error("Failed to fetch yoga data");
-//       }
-//       const data = await response.json();
-//       const yogaPosition = data[i]; // Assuming the API returns an array of yoga positions
-
-//       fakeData.push({
-//         img: getImage(yogaPosition.id), // Assuming the API returns an image index
-//         title: yogaPosition.sanskrit_name_adapted,
-//         rating: yogaPosition.rating || getRandomRating(),
-//         commentCount: yogaPosition.comments || getRandomNumber(20),
-//         minutes: yogaPosition.duration || getRandomNumberInRange(20, 80),
-//         calories: yogaPosition.calories || getRandomNumberInRange(100, 600),
-//         difficulty: yogaPosition.level || getRandomDifficulty(),
-//       });
-//     } catch (error) {
-//       console.error("Error fetching yoga data:", error);
-//     }
-//   }
-//   console.log(fakeData)
-
-//   return fakeData;
-// };
-
-// // Funciones para generar valores aleatorios de rating y difficulty
-// const getRandomRating = () => {
-//   return Math.random() * (5 - 1) + 1;
-// };
-
-// const getRandomDifficulty = () => {
-//   const difficulties = ["Beginner", "Intermediate", "Advanced"];
-//   const randomIndex = Math.floor(Math.random() * difficulties.length);
-//   return difficulties[randomIndex];
-// };
-
-// // Funciones para generar números aleatorios en un rango específico
-// const getRandomNumber = (max) => {
-//   return Math.floor(Math.random() * max);
-// };
-
-// const getRandomNumberInRange = (min, max) => {
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// };
-
-// const getImage = (index) => {
-//   switch (index) {
-//     case 1:
-//       return imgYoga1;
-//     case 2:
-//       return imgYoga2;
-//     case 3:
-//       return imgYoga3;
-//     case 4:
-//       return imgYoga4;
-//     case 5:
-//       return imgYoga5;
-//     default:
-//       return null;
-//   }
-// };

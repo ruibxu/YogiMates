@@ -1,17 +1,4 @@
-// export const dataCarouselRecommended = [
-//   {
-//     img: require("../assets/PageClass/imgYoga1.png"),
-//     title: "Position_yoga_1",
-//   },
-//   {
-//     img: require("../assets/PageClass/imgYoga2.png"),
-//     title: "Position_yoga_2",
-//   },
-//   {
-//     img: require("../assets/PageClass/imgYoga3.png"),
-//     title: "Position_yoga_3",
-//   }
-// ];
+
 
 const apiKey = "AIzaSyCSKGJiALGzcQMfjmFqJHZe6ycbL0JyNDM";
 const videoIds = ["o_73FeXw3ZI", "p5K6wU-0zG4", "CbQ2hsiEeYc"];
@@ -99,7 +86,6 @@ export const dataCarouselRecommended = async () => {
 
       // Agregar los datos del video al array
       videoDataArray.push(videoInfo);
-      console.log(yogismIndex);
       yogismIndex = ((yogismIndex + 1) % 4) + 4;
     }
   }

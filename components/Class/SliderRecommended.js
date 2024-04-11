@@ -37,8 +37,9 @@ const SliderRecommended = () => {
   };
 
   const handleOnViewableItemsChanged = useRef(({ viewableItems }) => {
-    console.log("viewableItems", viewableItems[0].index);
-    setIndex(viewableItems[0].index);
+    if (viewableItems && viewableItems.length > 0) {
+      setIndex(viewableItems[0].index);
+    }
   }).current;
 
   const viewabilityConfig = useRef({
@@ -84,7 +85,7 @@ const SliderRecommended = () => {
             <View style={{ width: ITEM_WIDTH, marginHorizontal: 24 }}>
               <View style={styles.posterContainer}>
                 <ImageBackground
-                  source={item.thumbnailUrl}
+                  source={{ uri: item.thumbnailUrl }}
                   style={{ width: "100%", height: "100%" }}
                   imageStyle={{ borderRadius: 10 }} // Aplica bordes redondeados a la imagen
                 >
@@ -170,7 +171,6 @@ const SliderRecommended = () => {
                                 styles.text,
                                 {
                                   fontSize: 10,
-                                  fontWeight: 600,
                                 },
                               ]}
                             >
@@ -243,7 +243,12 @@ const SliderRecommended = () => {
                           </View>
                         </View>
                       </View>
-                      <View style={styles.gradientOverlay} />
+                      <View style={styles.gradientOverlay}>
+                        <Image
+                          source={require("../../assets/PageClass/gradient_img.png")}
+                          style={{ flex: 1, resizeMode: "cover" }}
+                        />
+                      </View>
                     </View>
                   </View>
                   {/* Contenido opcional */}
@@ -279,6 +284,7 @@ const styles = StyleSheet.create({
     backgroundImage:
       "linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))", // Gradiente transparente a blanco
   },
+
   box: {
     position: "absolute",
     bottom: 0,
@@ -289,7 +295,6 @@ const styles = StyleSheet.create({
   },
   textData: {
     color: "#CD6D4F",
-    // fontWeight: 600,
     fontSize: 7,
     marginLeft: 5,
   },

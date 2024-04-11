@@ -1,13 +1,13 @@
 
-import { HeartRateSummary, HeartRateData, ActivitiesData} from "@dynamic-data/fitbit-data/src/mockups";
+import { HeartRateSummary, HeartRateData, activitiesData} from "@dynamic-data/fitbit-data/src/mockups";
 import { View, StyleSheet,  Dimensions, ScrollView,Text } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 import { theme } from '../../theme';
 
 const CaloriesBurnedGraph = () => {
     // Extract calories burned data
-    const zoneNames = ActivitiesData.heartRateZones.map(zone => zone.name);
-    const caloriesBurned = ActivitiesData.heartRateZones.map(zone => zone.caloriesOut);
+    const zoneNames = activitiesData.heartRateZones.map(zone => zone.name);
+    const caloriesBurned = activitiesData.heartRateZones.map(zone => zone.caloriesOut);
   
     // Prepare dataset
     const dataset = {

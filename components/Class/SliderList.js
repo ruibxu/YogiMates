@@ -24,8 +24,6 @@ const SliderList = () => {
     fetchData();
   }, []);
 
-  console.log(fakeData)
-
   return (
     <View style={{ width: width, height: 210, marginBottom: 20 }}>
       <FlatList
@@ -55,7 +53,6 @@ const styles = StyleSheet.create({
       fontSize: 16,
       paddingHorizontal: 24,
       marginBottom: 15,
-      fontWeight: "600",
     },
     posterImage: {
       width: 90,

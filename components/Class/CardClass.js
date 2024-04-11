@@ -4,7 +4,6 @@ import { theme } from "../../theme";
 import StarRating from "../Rating";
 
 const CardClass = ({ item, type }) => {
-  // console.log(item)
   return (
     <View
       style={{
@@ -26,7 +25,7 @@ const CardClass = ({ item, type }) => {
       }}
     >
       <Image
-        source={item.thumbnailUrl}
+        source={{ uri: item.thumbnailUrl }}
         style={[
           styles.posterImage,
           { width: type ? 160 : 120, height: type ? 86 : 80 },
@@ -99,7 +98,6 @@ const CardClass = ({ item, type }) => {
               styles.text,
               {
                 fontSize: 7,
-                // fontWeight: 600,
               },
             ]}
           >
@@ -189,7 +187,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.text,
-    fontWeight: "600",
     width: "100%",
     alignItems: "flex-start",
   },
@@ -200,7 +197,6 @@ const styles = StyleSheet.create({
   },
   textData: {
     color: "#CD6D4F",
-    fontWeight: "600",
     fontSize: 7,
     marginLeft: 5,
   },
