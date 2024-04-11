@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { theme } from "../theme";
 import { dataClassesClass } from "../data/DataClassesClass";
-import CardClass from "../component/Class/CardClass";
+import CardClass from "../components/Class/CardClass.js";
 
 const CategoryClass = ({ route, navigation }) => {
   const selectedCategory = route.params;

@@ -32,6 +32,7 @@ const CircularProgressBar = ({ radius, strokeWidth, progress, color, bgColor }) 
           x={radius}
           y={radius}
           fill="#000"
+          color="#5E7167"
           textAnchor="middle"
           fontSize={20}
           fontWeight="bold"
