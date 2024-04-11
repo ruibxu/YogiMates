@@ -1,17 +1,35 @@
 import { Dimensions, FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../theme";
-import { dataClassesClass } from "../../data/DataClassesClass";
+import { generateFakeDataClassesClass } from "../../data/DataClassesClass";
 import CardClass from "./CardClass";
+import { useEffect, useState } from "react";
 
 const width = Dimensions.get("window").width;
 
 const CONTAINER_SPACE = width * 0.39;
 
 const SliderList = () => {
+  const [fakeData, setFakeData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await generateFakeDataClassesClass();
+        setFakeData(data);
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(fakeData)
+
   return (
     <View style={{ width: width, height: 210, marginBottom: 20 }}>
       <FlatList
-        data={dataClassesClass}
+        data={fakeData}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.title}
         contentContainerStyle={{ paddingLeft: 24 }}
