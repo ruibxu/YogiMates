@@ -111,16 +111,16 @@ const Home = (summaryData) => {
           <View style={styles.content}>
             <View>
               <View style={styles.Analysis1}>
-                <View style={styles.subtime}>
-                  <AntDesign name="clockcircle" size={24} color="#90B4A1" />
+                <View style={styles.circleLabels}>
+                  <AntDesign name="clockcircle" size={24} color="#CD6D4F" />
                   <Text>{exerciseTime} </Text>
                 </View>
-                <View style={styles.subtime}>
-                  <FontAwesome5 name="fire-alt" size={24} color="#90B4A1" />
+                <View style={styles.circleLabels}>
+                  <FontAwesome5 name="fire-alt" size={24} color="#CD6D4F" />
                   <Text>{ActivitySummary.cal_total} </Text>
                 </View>
-                <View style={styles.subtime}>
-                  <MaterialIcons name="bar-chart" size={24} color="#90B4A1" />
+                <View style={styles.circleLabels}>
+                  <MaterialIcons name="bar-chart" size={24} color="#CD6D4F" />
                   <Text>Beg</Text>
                 </View>
               </View>
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   carousel: {},
   Analysis1: {
     flexDirection: "row",
-    gap: 2,
+    gap: 5,
   },
   card: {
     backgroundColor: "#fff",
@@ -210,6 +210,7 @@ const styles = StyleSheet.create({
   },
   Analysiscard: {
     padding: 10,
+    marginBottom:35,
   },
   image: {
     width: "100%",
@@ -240,6 +241,7 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   subtime: {
+
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
@@ -258,6 +260,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 15,
+  },
+  circleLabels:{
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.2,
+    // shadowRadius: 4,
+    elevation: 5,
+    // height: 42,
+    // backgroundColor: "red",
+    width: 60,
+    height:60,
+    borderRadius: 30,
+    flexDirection: "column",
+    // gap: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 15,
+    backgroundColor:"#F7D7DA"
   },
   recommendation: {
     backgroundColor: "#DFEAE2",
