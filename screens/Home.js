@@ -106,7 +106,10 @@ const Home = (summaryData) => {
             </View>
           </View>
         </View>
+        <View style={{ flexDirection:"row", justifyContent:"space-between" }}>
         <Text style={styles.title}>Analysis summary</Text>
+        <Text style={{ marginTop:15, color:"#5E7167",textDecorationLine: 'underline' }}>See Details</Text>
+        </View>
         <View style={[styles.Analysiscard, { height: 250 }]}>
           <View style={styles.content}>
             <View>
