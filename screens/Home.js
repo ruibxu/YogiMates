@@ -150,8 +150,8 @@ const Home = (summaryData) => {
                 </View>
                 <View style={[styles.labels, {backgroundColor:"#DCEDFA"}]}>
                   <Image
-                    source={bedtime} // or provide a URL
-                    style={{ width: 33, height: 33 }} // Set width and height as per your requirement
+                    source={bedtime} 
+                    style={{ width: 33, height: 33 }} 
                   />
                   <View>
                     <Text>8h 42m</Text>
@@ -161,8 +161,8 @@ const Home = (summaryData) => {
               </View>
             </View>
             <Image
-              source={analysis} // or provide a URL
-              style={{ width: 124, height: 150 }} // Set width and height as per your requirement
+              source={analysis}
+              style={{ width: 200, height: 210 }} 
             />
           </View>
         </View>
