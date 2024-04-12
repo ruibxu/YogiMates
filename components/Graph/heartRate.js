@@ -5,6 +5,7 @@ import { theme } from '../../theme';
 const heartRate = () => {
   const zoneNames = activitiesData.heartRateZones.map(zone => zone.name);
   const maxHeartRates = activitiesData.heartRateZones.map(zone => zone.max);
+  
   const minHeartRates = activitiesData.heartRateZones.map(zone => zone.min);
 
   // Prepare dataset
