@@ -1,12 +1,11 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { theme } from "../theme";
-import { dataClassesClass } from "../data/DataClassesClass";
-import CardClass from "../components/Class/CardClass.js";
+import CardClass from "../components/Class/CardClass";
+import { generateFakeDataClassesClass } from "../data/DataClassesClass";
 
 const CategoryClass = ({ route, navigation }) => {
   const selectedCategory = route.params;
-  console.log(route.params.title);
   const [fakeData, setFakeData] = useState([]);
 
   useEffect(() => {
@@ -25,8 +24,6 @@ const CategoryClass = ({ route, navigation }) => {
     fetchData();
   }, []);
 
-  console.log(fakeData);
-
   useLayoutEffect(() => {
     navigation.setOptions({
       title: "CLASS",
@@ -37,7 +34,6 @@ const CategoryClass = ({ route, navigation }) => {
       },
     });
   }, [navigation, selectedCategory]);
-  //hacer un filter para filtra la fakeData por selectedCategory.title
 
   return (
     <ScrollView>
@@ -47,7 +43,7 @@ const CategoryClass = ({ route, navigation }) => {
           <Image source={require("../assets/PageClass/filter_list.png")} />
         </View>
         <View style={styles.options}>
-          {fakeData.map((item) => (
+        {fakeData.map((item) => (
             <CardClass key={item.title} item={item} type={true} />
           ))}
         </View>
@@ -63,7 +59,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontWeight: 600,
     color: theme.colors.text,
   },
   filterBox: {
